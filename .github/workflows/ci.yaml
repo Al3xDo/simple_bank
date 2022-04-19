@@ -33,6 +33,12 @@ jobs:
         # use with to specify the input
         with:
           go-version: 1.18
+      - name: Install golang-migrate
+      # use | to run multiple commands
+        run: |
+        curl -L https://github.com/golang-migrate/migrate/releases/download/v4.15.1/migrate.linux-amd64.tar.gz | tar xyz
+        sudo mv migrate.linux-amd64 /user/bin/
+        which migrate
       -name: Run migration
         run: make migrateup
 
