@@ -20,7 +20,8 @@ func NewServer(store *db.Store) *Server {
 	// add routes to router
 	// if you pass multiple funcs -> last one is handler and others are middleware
 	router.POST("/accounts", server.CreateAccount)
-	router.GET("/account", server.GetAccount)
+	router.GET("/account/:id", server.GetAccount)
+	router.GET("/accounts", server.ListAccount)
 	server.router = router
 	return server
 }
