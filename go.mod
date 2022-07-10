@@ -1,4 +1,4 @@
-module simplebank
+module github.com/Al3xDo/simple_bank
 
 go 1.18
 
